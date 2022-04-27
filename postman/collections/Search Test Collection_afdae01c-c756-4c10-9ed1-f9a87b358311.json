@@ -18,9 +18,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/search?query=jeans",
+					"raw": "{{searchUrl}}/search?query=jeans",
 					"host": [
-						"{{baseUrl}}"
+						"{{searchUrl}}"
 					],
 					"path": [
 						"search"
@@ -88,9 +88,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/search?query=",
+					"raw": "{{searchUrl}}/search?query=",
 					"host": [
-						"{{baseUrl}}"
+						"{{searchUrl}}"
 					],
 					"path": [
 						"search"
@@ -158,9 +158,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/search?query=javascript:`asdfioansdfoainsdf`",
+					"raw": "{{searchUrl}}/search?query=javascript:`asdfioansdfoainsdf`",
 					"host": [
-						"{{baseUrl}}"
+						"{{searchUrl}}"
 					],
 					"path": [
 						"search"
@@ -214,12 +214,35 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bea84b6b-10e5-4d47-ab6e-14370206f011",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fc295705-7646-4540-8c68-01b703f6201e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
-			"id": "f6fb1aea-b5cf-4285-af8d-f749e210814c",
+			"id": "2183fc20-fc57-49cd-a80d-32d652df3ff6",
 			"key": "baseUrl",
 			"value": "http://example.com",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		}
 	]
 }

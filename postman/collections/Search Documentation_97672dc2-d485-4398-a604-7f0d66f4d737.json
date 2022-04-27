@@ -18,9 +18,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/search?query=jeans",
+					"raw": "{{searchUrl}}/search?query=jeans",
 					"host": [
-						"{{baseUrl}}"
+						"{{searchUrl}}"
 					],
 					"path": [
 						"search"
@@ -74,12 +74,35 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0ceefd2d-3bca-40f0-b444-3840c85fbd9a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a17e65ea-4b7a-401d-901e-34c205d2ef9d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
-			"id": "955d4ef4-6895-47d0-8c57-69e7bd4d07eb",
+			"id": "bfa056b3-7cb3-44fe-aeca-de316e5d7854",
 			"key": "baseUrl",
 			"value": "http://example.com",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
