@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "081da4a3-750f-48c9-8764-0eac70c334cc",
+		"name": "Product Catalog",
+		"description": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/480px-Magnifying_glass_icon.svg.png\" alt=\"drawing\" width=\"30\" height=\"30\"/></img>\n\n# Who this collection is for?\nThis collection serves as a API reference for Online Retailers to integrate with Union Fashion's Product Catalog API.\n\n## What does this collection do?\nThis collection provides Online Retailers the ability to search for Product Items on the Union Fashion Catalog from their application.\n\n## Prerequisites\nYou are required to select the active environment ProductCatalog {{EnvironmentName}}, For Example, if the collection is being operated on at the pre-implementation or prototyping stage, the environment selected would be ProductCatalog Mock.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search Brands",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "62ba9053-a163-44ec-afbf-79088af9f3fa",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Expect product to have all relevant keys\", function () {",
+							"    for (var i = 0; i < jsonData.products.length; i++) {",
+							"        pm.expect(jsonData.products[i]).to.include.all.keys(\"id\", \"category\", \"brand\", \"color\", \"gender\", \"unitPrice\", \"unitSalePrice\");",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Expect gender to be m, f, or u (unisex)\", function () {",
+							"    for (var i = 0; i < jsonData.products.length; i++) {",
+							"        pm.expect(jsonData.products[i].gender).to.be.oneOf([\"m\", \"f\", \"u\"]);",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Expect ID, category, brand, color, gender to be string\", function () {",
+							"    for (var i = 0; i < jsonData.products.length; i++) {",
+							"        pm.expect(jsonData.products[i].id).to.be.a('string');",
+							"        pm.expect(jsonData.products[i].category).to.be.a('string');",
+							"        pm.expect(jsonData.products[i].brand).to.be.a('string');",
+							"        pm.expect(jsonData.products[i].color).to.be.a('string');",
+							"        pm.expect(jsonData.products[i].gender).to.be.a('string');",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Expect prices to be number\", function () {",
+							"    for (var i = 0; i < jsonData.products.length; i++) {",
+							"        pm.expect(jsonData.products[i].unitPrice).to.be.a('number');",
+							"        pm.expect(jsonData.products[i].unitSalePrice).to.be.a('number');",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Expect prices to be to 2dp or round number\", function () {",
+							"    for (var i = 0; i < jsonData.products.length; i++) {",
+							"        var upSplit = String(jsonData.products[i].unitPrice).split(\".\");",
+							"        var uspSplit = String(jsonData.products[i].unitSalePrice).split(\".\");",
+							"        ",
+							"        if (upSplit.length > 1) {",
+							"            pm.expect(upSplit && upSplit[1]).to.have.length(2);   ",
+							"        } else {",
+							"            pm.expect(upSplit.length).to.eql(1);",
+							"        }",
+							"        ",
+							"        if (uspSplit.length > 1) {",
+							"            pm.expect(uspSplit && uspSplit[1]).to.have.length(2);   ",
+							"        } else {",
+							"            pm.expect(uspSplit.length).to.eql(1);",
+							"        }",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "44fa6a8e-85aa-4c99-b9e9-38c9840218fa",
+						"exec": [
+							"const brands = [{",
+							"    \"apparel\":   'XYZ-JEAN-123',",
+							"},",
+							"{",
+							"    \"apparel\":   'XYZ-Shirt-123',",
+							"},",
+							"{",
+							"    \"apparel\":   'XYZ-Skirt-123',",
+							"}",
+							"]",
+							"",
+							"const brand  = _.sample(brands)",
+							"pm.environment.set(\"apparel\", brand.apparel);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fba26f7a-fa7e-4747-9e32-ac28ea1a5562",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{searchUrl}}/search?query=jeans",
+					"host": [
+						"{{searchUrl}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "jeans",
+							"description": "The keyword to search on."
+						}
+					]
+				},
+				"description": "Search for products by keyword."
+			},
+			"response": [
+				{
+					"id": "6754fbef-cc1c-42c6-8f9f-70363fe23edd",
+					"name": "200 - Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{searchUrl}}/search?query=jeans",
+							"host": [
+								"{{searchUrl}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "jeans"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"products\": [\n  {\n   \"id\": \"XYZ-JEAN-123\",\n   \"category\": \"Jeans\",\n   \"brand\": \"Union\",\n   \"color\": \"black\",\n   \"gender\": \"m\",\n   \"unitPrice\": 49.99,\n   \"unitSalePrice\": 29.99\n  },\n  {\n   \"id\": \"QWE-JEAN-098\",\n   \"category\": \"Jeans\",\n   \"brand\": \"Levis\",\n   \"color\": \"blue\",\n   \"gender\": \"f\",\n   \"unitPrice\": 39.99,\n   \"unitSalePrice\": 39.99\n  }\n ]\n}"
+				},
+				{
+					"id": "ee9f1be6-d177-45bf-af2c-11ab540d69ea",
+					"name": "Search Shirt Types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/filter?item=Shirt",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "item",
+									"value": "Shirt"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"products\": [\n  {\n   \"id\": \"XYZ-Shirt-123\",\n   \"category\": \"Shirt\",\n   \"brand\": \"Union\",\n   \"color\": \"black\",\n   \"gender\": \"m\",\n   \"unitPrice\": 49.99,\n   \"unitSalePrice\": 29.99\n  },\n  {\n   \"id\": \"XYZ-Shirt-098\",\n   \"category\": \"Shirt\",\n   \"brand\": \"Levis\",\n   \"color\": \"blue\",\n   \"gender\": \"f\",\n   \"unitPrice\": 39.99,\n   \"unitSalePrice\": 39.99\n  }\n ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "aecce0e7-68fa-4576-8d20-8419cdf749db",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9607c67c-3729-487b-8c7b-96c28f30e9bf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
