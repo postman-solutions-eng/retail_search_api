@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "081da4a3-750f-48c9-8764-0eac70c334cc",
+		"_postman_id": "6e596c83-fe2d-4218-9833-e304d42c4ab8",
 		"name": "Product Catalog",
 		"description": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/480px-Magnifying_glass_icon.svg.png\" alt=\"drawing\" width=\"30\" height=\"30\"/></img>\n\n# Who this collection is for?\nThis collection serves as a API reference for Online Retailers to integrate with Union Fashion's Product Catalog API.\n\n## What does this collection do?\nThis collection provides Online Retailers the ability to search for Product Items on the Union Fashion Catalog from their application.\n\n## Prerequisites\nYou are required to select the active environment ProductCatalog {{EnvironmentName}}, For Example, if the collection is being operated on at the pre-implementation or prototyping stage, the environment selected would be ProductCatalog Mock.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "16727233-6e596c83-fe2d-4218-9833-e304d42c4ab8"
 	},
 	"item": [
 		{
@@ -12,7 +13,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "62ba9053-a163-44ec-afbf-79088af9f3fa",
+						"id": "37b1a202-5403-4c02-a4d5-cef81cb943c6",
 						"exec": [
 							"var jsonData = pm.response.json();",
 							"",
@@ -74,7 +75,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "44fa6a8e-85aa-4c99-b9e9-38c9840218fa",
+						"id": "5c403562-73e3-4b76-b865-81781c6d43bf",
 						"exec": [
 							"const brands = [{",
 							"    \"apparel\":   'XYZ-JEAN-123',",
@@ -95,7 +96,7 @@
 					}
 				}
 			],
-			"id": "fba26f7a-fa7e-4747-9e32-ac28ea1a5562",
+			"id": "e16b7e7c-9dc0-4c0f-ae1d-207a8c2241c3",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -125,7 +126,7 @@
 			},
 			"response": [
 				{
-					"id": "6754fbef-cc1c-42c6-8f9f-70363fe23edd",
+					"id": "afeada7a-d0ba-45dd-b56a-9d98c4e7be5a",
 					"name": "200 - Success",
 					"originalRequest": {
 						"method": "GET",
@@ -149,6 +150,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -160,7 +162,7 @@
 					"body": "{\n \"products\": [\n  {\n   \"id\": \"XYZ-JEAN-123\",\n   \"category\": \"Jeans\",\n   \"brand\": \"Union\",\n   \"color\": \"black\",\n   \"gender\": \"m\",\n   \"unitPrice\": 49.99,\n   \"unitSalePrice\": 29.99\n  },\n  {\n   \"id\": \"QWE-JEAN-098\",\n   \"category\": \"Jeans\",\n   \"brand\": \"Levis\",\n   \"color\": \"blue\",\n   \"gender\": \"f\",\n   \"unitPrice\": 39.99,\n   \"unitSalePrice\": 39.99\n  }\n ]\n}"
 				},
 				{
-					"id": "ee9f1be6-d177-45bf-af2c-11ab540d69ea",
+					"id": "2e3bd1b4-fcc5-4d2a-a785-c4b74192f879",
 					"name": "Search Shirt Types",
 					"originalRequest": {
 						"method": "GET",
@@ -185,6 +187,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -202,7 +205,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "aecce0e7-68fa-4576-8d20-8419cdf749db",
+				"id": "eb1a61c0-b13d-40c3-8822-3887c0a55902",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -212,7 +215,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "9607c67c-3729-487b-8c7b-96c28f30e9bf",
+				"id": "b0ef91a1-2785-4213-be31-17980719e7cc",
 				"type": "text/javascript",
 				"exec": [
 					""

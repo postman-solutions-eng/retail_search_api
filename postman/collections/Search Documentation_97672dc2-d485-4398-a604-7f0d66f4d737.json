@@ -1,14 +1,15 @@
 {
 	"info": {
-		"_postman_id": "e0f71ef2-183c-4193-b068-4fc969eb9b76",
+		"_postman_id": "609323bb-82b0-4046-b1da-5b43df77ba79",
 		"name": "Search Documentation",
 		"description": "The API for searching for products in the Union Fashion catalog.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "16727233-609323bb-82b0-4046-b1da-5b43df77ba79"
 	},
 	"item": [
 		{
 			"name": "Keyword",
-			"id": "467a4dd7-b67c-4ce8-a2d1-ac20941017de",
+			"id": "de604d9b-fe43-4b78-a2c5-8e716d9a6e8f",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -37,7 +38,7 @@
 			},
 			"response": [
 				{
-					"id": "e82c83e4-39a9-4fd0-9fdd-e270ce74d278",
+					"id": "59a3e2af-e38f-422a-b190-3baf082c8694",
 					"name": "response",
 					"originalRequest": {
 						"method": "GET",
@@ -61,6 +62,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -78,7 +80,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0ceefd2d-3bca-40f0-b444-3840c85fbd9a",
+				"id": "36a7be40-eb05-46bf-b7f8-8d3d0cfdb0e3",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -88,7 +90,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a17e65ea-4b7a-401d-901e-34c205d2ef9d",
+				"id": "dd45bcde-30cb-4f4d-a927-015b359d5a61",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -101,8 +103,7 @@
 			"id": "bfa056b3-7cb3-44fe-aeca-de316e5d7854",
 			"key": "baseUrl",
 			"value": "http://example.com",
-			"type": "string",
-			"disabled": true
+			"type": "string"
 		}
 	]
 }
