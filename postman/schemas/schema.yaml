@@ -9,8 +9,7 @@ info:
 servers:
 - url: '{{searchUrl}}'
   variables: {}
-security:
-  - apiKey: []
+
 paths:
   /search:
     get:
@@ -27,6 +26,7 @@ paths:
         style: form
         explode: true
         schema:
+          $ref: '#/components/schemas/Keyword'
           type: string
           example: jeans
       responses:
@@ -53,10 +53,13 @@ paths:
                   gender: f
                   unitPrice: 39.99
                   unitSalePrice: 39.99
+        500:
+          description: Internal server error
       deprecated: false
+
 components:
   securitySchemes:
-    app_id:
+    apiKey:
       type: apiKey
       description: API key to authorize requests.
       name: appid
@@ -123,6 +126,10 @@ components:
         gender: m
         unitPrice: 49.99
         unitSalePrice: 29.99
+
+security:
+  - apiKey: []
+
 tags:
 - name: Search
   description: 'Seaching API resources.'
