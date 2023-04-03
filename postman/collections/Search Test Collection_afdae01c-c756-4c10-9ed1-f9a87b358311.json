@@ -1,18 +1,15 @@
 {
 	"info": {
-		"_postman_id": "5276a980-7e9e-4ce7-8868-118c2c6a83b0",
+		"_postman_id": "fb61bbbf-8fd8-4671-a4d1-42f84bec9275",
 		"name": "Search Test Collection",
 		"description": "The API for searching for products in the Union Fashion cawtalog.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "16727233-5276a980-7e9e-4ce7-8868-118c2c6a83b0"
+		"_uid": "16727233-fb61bbbf-8fd8-4671-a4d1-42f84bec9275"
 	},
 	"item": [
 		{
 			"name": "Keyword",
-			"id": "0f34dabc-71c9-4c65-bbdb-fe8c21c5e43b",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"id": "77ba810f-6b5f-406c-acb2-962011453c2b",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -41,7 +38,7 @@
 			},
 			"response": [
 				{
-					"id": "022d8576-5555-4103-82c3-cfa78eb1caee",
+					"id": "0d55e351-edfc-4472-a43e-a0af2d726e8e",
 					"name": "response",
 					"originalRequest": {
 						"method": "GET",
@@ -65,6 +62,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -78,7 +76,7 @@
 		},
 		{
 			"name": "Search for nothing",
-			"id": "5a42df4e-fc97-4708-a1cf-dc4bc91a1ecb",
+			"id": "e51cbed3-96c2-42b4-b473-30b7f14443e0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -110,7 +108,7 @@
 			},
 			"response": [
 				{
-					"id": "0a64ec70-5d97-4468-a465-10d9bde6661f",
+					"id": "331d7ca5-1beb-4867-a8f3-e180e92a0be7",
 					"name": "Untitled Example",
 					"originalRequest": {
 						"method": "GET",
@@ -134,6 +132,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -147,7 +146,7 @@
 		},
 		{
 			"name": "Search for XSS",
-			"id": "d14ad6fe-8fde-427f-9cd2-35eeaab30a84",
+			"id": "10b53c6f-d0eb-4617-b612-6d8eb2662a0c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -179,7 +178,7 @@
 			},
 			"response": [
 				{
-					"id": "ffddda1f-ef5e-4c70-af88-007008460c7b",
+					"id": "294fec22-0ba1-471b-8204-93750680342f",
 					"name": "Untitled Example",
 					"originalRequest": {
 						"method": "GET",
@@ -203,6 +202,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -219,7 +219,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "441d1433-d205-4588-9f21-449e4a6b0404",
+				"id": "5b794869-923f-4a24-9240-76401a369f7e",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -229,7 +229,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d6432cad-8196-4265-8aae-e9104d691c9a",
+				"id": "192d82da-8f3f-4802-8f9d-b9eec10a3397",
 				"type": "text/javascript",
 				"exec": [
 					"pm.test(\"Status code is 200\", function () {",

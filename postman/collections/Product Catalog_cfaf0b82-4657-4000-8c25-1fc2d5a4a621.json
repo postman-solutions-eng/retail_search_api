@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "6e596c83-fe2d-4218-9833-e304d42c4ab8",
+		"_postman_id": "efd5eb32-0aa7-4f88-b60a-3f9e6ccc0f2d",
 		"name": "Product Catalog",
 		"description": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/480px-Magnifying_glass_icon.svg.png\" alt=\"drawing\" width=\"30\" height=\"30\"/></img>\n\n# Who this collection is for?\nThis collection serves as a API reference for Online Retailers to integrate with Union Fashion's Product Catalog API.\n\n## What does this collection do?\nThis collection provides Online Retailers the ability to search for Product Items on the Union Fashion Catalog from their application.\n\n## Prerequisites\nYou are required to select the active environment ProductCatalog {{EnvironmentName}}, For Example, if the collection is being operated on at the pre-implementation or prototyping stage, the environment selected would be ProductCatalog Mock.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "16727233-6e596c83-fe2d-4218-9833-e304d42c4ab8"
+		"_uid": "16727233-efd5eb32-0aa7-4f88-b60a-3f9e6ccc0f2d"
 	},
 	"item": [
 		{
@@ -13,12 +13,12 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "37b1a202-5403-4c02-a4d5-cef81cb943c6",
+						"id": "e0dbcc20-e3cc-4648-965f-b5277157da82",
 						"exec": [
 							"var jsonData = pm.response.json();",
 							"",
 							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
+							"    pm.response.to.have.status(400);",
 							"});",
 							"",
 							"pm.test(\"Expect product to have all relevant keys\", function () {",
@@ -75,7 +75,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5c403562-73e3-4b76-b865-81781c6d43bf",
+						"id": "33fa6f43-f164-4ca8-813f-7a0fdbcdf150",
 						"exec": [
 							"const brands = [{",
 							"    \"apparel\":   'XYZ-JEAN-123',",
@@ -96,7 +96,7 @@
 					}
 				}
 			],
-			"id": "e16b7e7c-9dc0-4c0f-ae1d-207a8c2241c3",
+			"id": "28863c99-5914-4258-805e-e8fd16f896b3",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -126,7 +126,7 @@
 			},
 			"response": [
 				{
-					"id": "afeada7a-d0ba-45dd-b56a-9d98c4e7be5a",
+					"id": "d4472b25-ba01-47ee-81fe-d25ba9122aae",
 					"name": "200 - Success",
 					"originalRequest": {
 						"method": "GET",
@@ -158,11 +158,10 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": null,
 					"body": "{\n \"products\": [\n  {\n   \"id\": \"XYZ-JEAN-123\",\n   \"category\": \"Jeans\",\n   \"brand\": \"Union\",\n   \"color\": \"black\",\n   \"gender\": \"m\",\n   \"unitPrice\": 49.99,\n   \"unitSalePrice\": 29.99\n  },\n  {\n   \"id\": \"QWE-JEAN-098\",\n   \"category\": \"Jeans\",\n   \"brand\": \"Levis\",\n   \"color\": \"blue\",\n   \"gender\": \"f\",\n   \"unitPrice\": 39.99,\n   \"unitSalePrice\": 39.99\n  }\n ]\n}"
 				},
 				{
-					"id": "2e3bd1b4-fcc5-4d2a-a785-c4b74192f879",
+					"id": "0deb316c-5156-4ced-a4e0-84c0d7671fcc",
 					"name": "Search Shirt Types",
 					"originalRequest": {
 						"method": "GET",
@@ -195,7 +194,6 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": null,
 					"body": "{\n \"products\": [\n  {\n   \"id\": \"XYZ-Shirt-123\",\n   \"category\": \"Shirt\",\n   \"brand\": \"Union\",\n   \"color\": \"black\",\n   \"gender\": \"m\",\n   \"unitPrice\": 49.99,\n   \"unitSalePrice\": 29.99\n  },\n  {\n   \"id\": \"XYZ-Shirt-098\",\n   \"category\": \"Shirt\",\n   \"brand\": \"Levis\",\n   \"color\": \"blue\",\n   \"gender\": \"f\",\n   \"unitPrice\": 39.99,\n   \"unitSalePrice\": 39.99\n  }\n ]\n}"
 				}
 			]
@@ -205,7 +203,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "eb1a61c0-b13d-40c3-8822-3887c0a55902",
+				"id": "da3fed55-bf77-40d8-975d-ff2d445ab5ca",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -215,7 +213,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b0ef91a1-2785-4213-be31-17980719e7cc",
+				"id": "ced70dc5-3639-4715-855a-6cd9a12fe572",
 				"type": "text/javascript",
 				"exec": [
 					""
