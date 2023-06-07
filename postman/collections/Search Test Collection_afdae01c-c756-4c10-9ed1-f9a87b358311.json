@@ -9,7 +9,28 @@
 	"item": [
 		{
 			"name": "Keyword",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "26adab18-af0b-4b98-b471-aecea06694eb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"for(let i=0; i<pm.response.json().products.length; i++){",
+							"    console.log(JSON.stringify(`Value of ID: ` + pm.response.json().products[i].id)+ `'s Category is: ` + pm.response.json().products[i].category);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "77ba810f-6b5f-406c-acb2-962011453c2b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
@@ -62,7 +83,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -70,13 +90,26 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": null,
 					"body": "{\n  \"products\": [\n    {\n      \"id\": \"XYZ-JEAN-123\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Union\",\n      \"color\": \"black\",\n      \"gender\": \"m\",\n      \"unitPrice\": 49.99,\n      \"unitSalePrice\": 29.99\n    },\n    {\n      \"id\": \"QWE-JEAN-098\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Levis\",\n      \"color\": \"blue\",\n      \"gender\": \"f\",\n      \"unitPrice\": 39.99,\n      \"unitSalePrice\": 39.99\n    }\n  ]\n}"
 				}
 			]
 		},
 		{
 			"name": "Search for nothing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46233824-741d-491e-9806-6471b892953c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "e51cbed3-96c2-42b4-b473-30b7f14443e0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -133,7 +166,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -141,13 +173,26 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": null,
 					"body": "{\n  \"products\": [\n    {\n      \"id\": \"XYZ-JEAN-123\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Union\",\n      \"color\": \"black\",\n      \"gender\": \"m\",\n      \"unitPrice\": 49.99,\n      \"unitSalePrice\": 29.99\n    },\n    {\n      \"id\": \"QWE-JEAN-098\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Levis\",\n      \"color\": \"blue\",\n      \"gender\": \"f\",\n      \"unitPrice\": 39.99,\n      \"unitSalePrice\": 39.99\n    }\n  ]\n}"
 				}
 			]
 		},
 		{
 			"name": "Search for XSS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4cf7f80a-b658-43df-86f9-6e1600823a64",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "10b53c6f-d0eb-4617-b612-6d8eb2662a0c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -204,7 +249,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -212,7 +256,6 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": null,
 					"body": "{\n  \"products\": [\n    {\n      \"id\": \"XYZ-JEAN-123\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Union\",\n      \"color\": \"black\",\n      \"gender\": \"m\",\n      \"unitPrice\": 49.99,\n      \"unitSalePrice\": 29.99\n    },\n    {\n      \"id\": \"QWE-JEAN-098\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Levis\",\n      \"color\": \"blue\",\n      \"gender\": \"f\",\n      \"unitPrice\": 39.99,\n      \"unitSalePrice\": 39.99\n    }\n  ]\n}"
 				}
 			]
@@ -222,7 +265,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5b794869-923f-4a24-9240-76401a369f7e",
+				"id": "149f4494-58d1-4069-a8dd-7c102f5d07cb",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -232,7 +275,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "192d82da-8f3f-4802-8f9d-b9eec10a3397",
+				"id": "6fb2281f-a13d-4389-9ab0-69fa1ddf2db4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -242,7 +285,7 @@
 	],
 	"variable": [
 		{
-			"id": "2183fc20-fc57-49cd-a80d-32d652df3ff6",
+			"id": "546821ae-eb60-4414-ac59-52a57dd997e9",
 			"key": "baseUrl",
 			"value": "http://example.com",
 			"type": "string"

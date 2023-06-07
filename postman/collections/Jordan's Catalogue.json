@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "15765fca-82d1-4c8d-bc1a-d118a3bcc2c8",
-		"name": "Search Documentation",
-		"description": "The API for searching for products in the Union Fashion catalog.",
+		"_postman_id": "a03f7f30-bfd4-452d-a160-0ff6c0b9609d",
+		"name": "Jordan's Catalogue",
+		"description": "The API for searching for products in the Union Fashion cawtalog.\n\nContact Support:\n Email: cooper@example.com",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "16727233-15765fca-82d1-4c8d-bc1a-d118a3bcc2c8"
+		"_uid": "18475591-a03f7f30-bfd4-452d-a160-0ff6c0b9609d"
 	},
 	"item": [
 		{
@@ -13,17 +13,35 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "665b6a34-3e1f-4b6c-88cb-dcb795905f67",
+						"id": "e8669eb6-17a0-4e1b-959e-8e43efa99459",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"var schema = {",
+							"    \"items\": {",
+							"        \"type\": \"boolean\"",
+							"    }",
+							"};",
+							"",
+							"var data1 = [true, false];",
+							"var data2 = [true, 123];",
+							"",
+							"pm.test('Schema is valid', function () {",
+							"    pm.expect(tv4.validate(data1, schema)).to.be.true;",
+							"    pm.expect(tv4.validate(data2, schema)).to.be.false;",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "ec2feb58-0eb2-412b-b444-5ee969094e84",
+			"id": "b0c2994e-7f15-4459-b86a-e09a1dfe2fe9",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -36,9 +54,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{searchUrl}}/search?query=jeans",
+					"raw": "{{baseUrl}}/search?query=jeans",
 					"host": [
-						"{{searchUrl}}"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"search"
@@ -55,8 +73,8 @@
 			},
 			"response": [
 				{
-					"id": "5941a61c-df70-4c31-93fe-9b517764c2ee",
-					"name": "response",
+					"id": "5b7bc0b0-44c9-4d3c-a514-921af0af62ee",
+					"name": "Untitled Example",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -91,33 +109,11 @@
 			]
 		}
 	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"id": "2f17c270-1fcf-4f37-99fa-a02b6085c25b",
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"id": "9712c682-3ad7-44c9-9304-b2cf874b0be0",
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
 	"variable": [
 		{
-			"id": "bfa056b3-7cb3-44fe-aeca-de316e5d7854",
+			"id": "93688991-12f6-4a25-85c6-6180b821358f",
 			"key": "baseUrl",
-			"value": "http://example.com",
+			"value": "{{searchUrl}}",
 			"type": "string"
 		}
 	]
