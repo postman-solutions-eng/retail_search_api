@@ -5,13 +5,28 @@
 		"description": "The API for searching for products in the Union Fashion catalog.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "16727233-15765fca-82d1-4c8d-bc1a-d118a3bcc2c8"
-
 	},
 	"item": [
 		{
 			"name": "Keyword",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "665b6a34-3e1f-4b6c-88cb-dcb795905f67",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "ec2feb58-0eb2-412b-b444-5ee969094e84",
-
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
@@ -40,9 +55,7 @@
 			},
 			"response": [
 				{
-
 					"id": "5941a61c-df70-4c31-93fe-9b517764c2ee",
-
 					"name": "response",
 					"originalRequest": {
 						"method": "GET",
@@ -66,7 +79,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Content-Type",
@@ -74,7 +86,6 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": null,
 					"body": "{\n  \"products\": [\n    {\n      \"id\": \"XYZ-JEAN-123\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Union\",\n      \"color\": \"black\",\n      \"gender\": \"m\",\n      \"unitPrice\": 49.99,\n      \"unitSalePrice\": 29.99\n    },\n    {\n      \"id\": \"QWE-JEAN-098\",\n      \"category\": \"Jeans\",\n      \"brand\": \"Levis\",\n      \"color\": \"blue\",\n      \"gender\": \"f\",\n      \"unitPrice\": 39.99,\n      \"unitSalePrice\": 39.99\n    }\n  ]\n}"
 				}
 			]
@@ -94,9 +105,7 @@
 		{
 			"listen": "test",
 			"script": {
-
 				"id": "9712c682-3ad7-44c9-9304-b2cf874b0be0",
-
 				"type": "text/javascript",
 				"exec": [
 					""
