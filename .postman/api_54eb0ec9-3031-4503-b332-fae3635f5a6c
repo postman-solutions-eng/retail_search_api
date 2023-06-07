@@ -9,6 +9,7 @@ id = 54eb0ec9-3031-4503-b332-fae3635f5a6c
 
 [config.relations.collections]
 rootDirectory = postman/collections
+
 files[] = {"id":"18475591-a03f7f30-bfd4-452d-a160-0ff6c0b9609d","path":"Jordan's Catalogue.json","metaData":{}}
 files[] = {"id":"16727233-efd5eb32-0aa7-4f88-b60a-3f9e6ccc0f2d","path":"Product Catalog_cfaf0b82-4657-4000-8c25-1fc2d5a4a621.json","metaData":{}}
 files[] = {"id":"16727233-15765fca-82d1-4c8d-bc1a-d118a3bcc2c8","path":"Search Documentation_97672dc2-d485-4398-a604-7f0d66f4d737.json","metaData":{}}
@@ -24,3 +25,5 @@ files[] = {"path":"schema.yaml","metaData":{}}
 [config.relations.apiDefinition.metaData]
 type = openapi:3
 rootFiles[] = schema.yaml
+rootFiles[] = index.yaml
+
