@@ -114,9 +114,9 @@ components:
         gender:
           type: string
         unitPrice:
-          type: number
+          type: decimal
         unitSalePrice:
-          type: number
+          type: decimal
       example:
         id: XYZ-JEAN-123
         category: Jeans
