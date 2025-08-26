@@ -23,7 +23,8 @@
 							"    console.log(JSON.stringify(`Value of ID: ` + pm.response.json().products[i].id)+ `'s Category is: ` + pm.response.json().products[i].category);",
 							"}"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
